@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.navSection {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: large;
+  background-color: rgb(54, 52, 180);
+  padding: 0 20px;
+}
+
+.userAuth {
+  cursor: pointer;
+}
+
+.sideBarSection {
+  width: 100%;
+  max-width: 15%;
+  height: 95vh;
+  padding-top: 10px;
+  background-color: lightgrey;
+}
+
+.sideBarSection ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.collectionSection {
+  display: flex;
+}
+/* loginSection */
+
+.loginSection,
+.registerSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.authForm {
+  width: 100%;
+  max-width: 50%;
+  margin-top: -230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.authForm label {
+  width: 100%;
+  max-width: 55%;
+  font-weight: 400;
+}
+
+.authForm input {
+  width: 100%;
+  max-width: 55%;
+  height: 1.4rem;
+}
+
+/* firmSection AddFirm */
+
+.firmSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.tableForm {
+  width: 100%;
+  max-width: 50%;
+  margin-top: -100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+.tableForm input {
+  width: 100%;
+  max-width: 85%;
+  height: 35px;
+  margin-bottom: 10px;
+}
+.tableForm label {
+  width: 100%;
+  max-width: 85%;
+  font-weight: 600;
+}
+
+/* productSection AddProduct */
+.productSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  check box inputs */
+.check-inp {
+  width: 100%;
+  max-width: 85%;
+  display: flex;
+}
+
+.check-inp label {
+  width: 20%;
+}
+.inputsContainer {
+  width: 100%;
+  display: flex;
+  gap: 1fr;
+}
+.checkboxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 50%;
+}
+.checkboxContainer label {
+  width: 100%;
+  font-size: small;
+}
+.checkboxContainer input {
+  margin-left: -180px;
+}
+.regBoxContainer label {
+  width: 100%;
+  font-size: small;
+}
+.regBoxContainer input {
+  width: 100%;
+  margin-left: -10px;
+}
+.regBoxContainer {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  font-size: small;
+}
+.regInputsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1fr;
+}
