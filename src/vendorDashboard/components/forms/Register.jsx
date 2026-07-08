@@ -22,6 +22,9 @@ const Register = () => {
       const data = await response.json();
       if (response.ok) {
         console.log(data);
+        setUsername("");
+        setEmail("");
+        setPassword("");
         alert("Vendor registered sucessfully");
       }
       if (response.status == 400) {
@@ -43,6 +46,7 @@ const Register = () => {
           type="text"
           name="username"
           placeHolder="Enter your name"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <br />
@@ -51,6 +55,7 @@ const Register = () => {
           type="text"
           name="email"
           placeHolder="Enter your email"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <br />
@@ -59,6 +64,7 @@ const Register = () => {
           type="password"
           name="password"
           placeHolder="Enter your password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
