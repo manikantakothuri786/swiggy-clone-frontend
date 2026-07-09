@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { API_URL } from "../../data/ApiPath";
 
-const Register = () => {
+const Register = ({ showLoginHandler }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,6 +26,7 @@ const Register = () => {
         setEmail("");
         setPassword("");
         alert("Vendor registered sucessfully");
+        showLoginHandler();
       }
       if (response.status == 400) {
         console.log("Email already taken, Please login");
@@ -45,7 +46,7 @@ const Register = () => {
         <input
           type="text"
           name="username"
-          placeHolder="Enter your name"
+          placeholder="Enter your name"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -54,7 +55,7 @@ const Register = () => {
         <input
           type="text"
           name="email"
-          placeHolder="Enter your email"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
