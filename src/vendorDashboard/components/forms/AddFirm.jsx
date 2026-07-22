@@ -39,7 +39,7 @@ const AddFirm = () => {
         body: formData,
       });
 
-      const data = await response;
+      const data = await response.json();
       if (response.ok) {
         console.log(data);
         alert("Firm added sucessfully");
@@ -50,6 +50,16 @@ const AddFirm = () => {
         setOffer("");
         setFile("");
       }
+      // console.log(data);
+      // console.log(data.firmId);
+      else if (data.message == "Vendor can only have, 🍴 1 firm!") {
+        alert("Firm already exists, you can add only one firm 🍴");
+      } else {
+        alert("Failed to add Firm 🍴");
+      }
+
+      const firmId = data.firmId;
+      localStorage.setItem("FirmId", firmId);
     } catch (error) {
       console.log(error);
       console.log("Unable to add Firm");

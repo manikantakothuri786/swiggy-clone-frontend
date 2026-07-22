@@ -17,14 +17,30 @@ const Login = ({ showWelcomeHandler }) => {
       });
 
       const data = await response.json();
+      const vendorId = data.vendorId;
+      //console.log(vendorId);
       if (response.ok) {
         alert("Login Sucess");
         localStorage.setItem("loginToken", data.token);
-        console.log(data);
         console.log("Login sucessfully");
         setEmail("");
         setPassword("");
         showWelcomeHandler();
+      }
+      const vendorResponse = await fetch(
+        `${API_URL}/vendor/single-vendor/${vendorId}`,
+        {
+          method: "GET",
+        },
+      );
+      const vendorResponseData = await vendorResponse.json();
+      //console.log(vendorResponseData);
+      //console.log(firmId);
+
+      if (vendorResponse.ok) {
+        const firmId = vendorResponseData.vendorFirmId;
+        localStorage.setItem("FirmId", firmId);
+        console.log("firmId saved in the local storage");
       }
     } catch (error) {
       console.error(error);
