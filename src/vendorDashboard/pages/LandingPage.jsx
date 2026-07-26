@@ -14,6 +14,7 @@ const LandingPage = () => {
   const [showFirm, setShowFirm] = useState(false);
   const [showProduct, setShowProduct] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+  const [showAllProducts, setShowAllProducts] = useState(false);
 
   const showLoginHandler = () => {
     setShowLogin(true);
@@ -21,6 +22,7 @@ const LandingPage = () => {
     setShowFirm(false);
     setShowProduct(false);
     setShowWelcome(false);
+    setShowAllProducts(false);
   };
 
   const showRegisterHandler = () => {
@@ -29,6 +31,7 @@ const LandingPage = () => {
     setShowFirm(false);
     setShowProduct(false);
     setShowWelcome(false);
+    setShowAllProducts(false);
   };
 
   const showFirmHandler = () => {
@@ -37,6 +40,7 @@ const LandingPage = () => {
     setShowLogin(false);
     setShowProduct(false);
     setShowWelcome(false);
+    setShowAllProducts(false);
   };
 
   const showProductHandler = () => {
@@ -45,6 +49,7 @@ const LandingPage = () => {
     setShowRegister(false);
     setShowLogin(false);
     setShowWelcome(false);
+    setShowAllProducts(false);
   };
 
   const showWelcomeHandler = () => {
@@ -53,6 +58,16 @@ const LandingPage = () => {
     setShowRegister(false);
     setShowLogin(false);
     setShowWelcome(true);
+    setShowAllProducts(false);
+  };
+
+  const showAllProductsHandler = () => {
+    setShowProduct(false);
+    setShowFirm(false);
+    setShowRegister(false);
+    setShowLogin(false);
+    setShowWelcome(false);
+    setShowAllProducts(true);
   };
 
   return (
@@ -66,14 +81,14 @@ const LandingPage = () => {
           <SideBar
             showFirmHandler={showFirmHandler}
             showProductHandler={showProductHandler}
+            showAllProductsHandler={showAllProductsHandler}
           />
           {showLogin && <Login showWelcomeHandler={showWelcomeHandler} />}
           {showRegister && <Register showLoginHandler={showLoginHandler} />}
           {showFirm && <AddFirm />}
           {showProduct && <AddProduct />}
           {showWelcome && <Welcome />}
-
-          <AllProducts />
+          {showAllProducts && <AllProducts />}
         </div>
       </section>
     </>
