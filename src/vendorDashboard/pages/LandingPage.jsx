@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 import Login from "../components/forms/Login";
@@ -15,6 +15,20 @@ const LandingPage = () => {
   const [showProduct, setShowProduct] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
   const [showAllProducts, setShowAllProducts] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
+
+  useEffect(() => {
+    const loginToken = localStorage.getItem("loginToken");
+    if (loginToken) setShowLogout(true);
+  }, []);
+
+  const logoutHandler = () => {
+    if (confirm("Are you sure, you want to logout?")) {
+      localStorage.removeItem("loginToken");
+      localStorage.removeItem("FirmId");
+      setShowLogout(false);
+    }
+  };
 
   const showLoginHandler = () => {
     setShowLogin(true);
@@ -76,6 +90,8 @@ const LandingPage = () => {
         <NavBar
           showLoginHandler={showLoginHandler}
           showRegisterHandler={showRegisterHandler}
+          showLogout={showLogout}
+          logoutHandler={logoutHandler}
         />
         <div className="collectionSection">
           <SideBar

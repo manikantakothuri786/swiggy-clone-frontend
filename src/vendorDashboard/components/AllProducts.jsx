@@ -44,7 +44,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      {products.lenght === 0 ? (
+      {products.length === 0 ? (
         <p>No products added</p>
       ) : (
         <table className="product-table">

@@ -41,6 +41,7 @@ const Login = ({ showWelcomeHandler }) => {
         const firmId = vendorResponseData.vendorFirmId;
         localStorage.setItem("FirmId", firmId);
         console.log("firmId saved in the local storage");
+        window.location.reload();
       }
     } catch (error) {
       console.error(error);
