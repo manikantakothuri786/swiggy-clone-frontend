@@ -6,6 +6,7 @@ import Register from "../components/forms/Register";
 import AddFirm from "../components/forms/AddFirm";
 import AddProduct from "../components/forms/AddProduct";
 import Welcome from "../components/Welcome";
+import AllProducts from "../components/AllProducts";
 
 const LandingPage = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -71,6 +72,8 @@ const LandingPage = () => {
           {showFirm && <AddFirm />}
           {showProduct && <AddProduct />}
           {showWelcome && <Welcome />}
+
+          <AllProducts />
         </div>
       </section>
     </>

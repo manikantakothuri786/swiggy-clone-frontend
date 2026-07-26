@@ -168,3 +168,21 @@ body {
   align-items: center;
   gap: 1fr;
 }
+
+/* All Products */
+
+.product-table {
+  border-collapse: collapse;
+  width: 80vw;
+  margin-top: 50px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid red;
+  padding: 8px;
+}
+.product-table th {
+  text-align: left;
+  background-color: grey;
+}
