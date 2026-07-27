@@ -6,10 +6,13 @@ const NavBar = ({
   showLogout,
   logoutHandler,
 }) => {
+  const firmName = localStorage.getItem("firmName");
   return (
     <div className="navSection">
       <div className="company">Vendor Dashboard</div>
-
+      <div className="firmName">
+        <h4>Firm Name: {firmName}</h4>
+      </div>
       <div className="userAuth">
         {!showLogout ? (
           <>

@@ -39,7 +39,10 @@ const Login = ({ showWelcomeHandler }) => {
 
       if (vendorResponse.ok) {
         const firmId = vendorResponseData.vendorFirmId;
+        const firmName = vendorResponseData.vendor.firm[0].firmName;
+        // console.log(firmName);
         localStorage.setItem("FirmId", firmId);
+        localStorage.setItem("firmName", firmName);
         console.log("firmId saved in the local storage");
         window.location.reload();
       }
