@@ -66,7 +66,12 @@ const LandingPage = () => {
       setShowAllProducts(false);
     } else {
       alert("Please Login!");
-      setShowLogin(true);
+      // setShowLogin(true);
+      // setShowProduct(false);
+      // setShowWelcome(false);
+      // setShowAllProducts(false);
+      // setShowRegister(false);
+      showLoginHandler();
     }
   };
 
@@ -80,7 +85,7 @@ const LandingPage = () => {
       setShowAllProducts(false);
     } else {
       alert("Please Login!");
-      setShowLogin(true);
+      showLoginHandler();
     }
   };
 
@@ -103,7 +108,7 @@ const LandingPage = () => {
       setShowAllProducts(true);
     } else {
       alert("Please Login!");
-      setShowLogin(true);
+      showLoginHandler();
     }
   };
 

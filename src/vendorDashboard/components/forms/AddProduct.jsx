@@ -72,7 +72,7 @@ const AddProduct = () => {
   return (
     <div className="productSection">
       <form className="tableForm" onSubmit={handleAddProduct}>
-        <h2>Add Product</h2>
+        <h3>Add Product</h3>
         <label>Product Name</label>
         <input
           type="text"
