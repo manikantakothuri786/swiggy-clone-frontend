@@ -66,26 +66,33 @@ const LandingPage = () => {
       setShowAllProducts(false);
     } else {
       alert("Please Login!");
-      // setShowLogin(true);
-      // setShowProduct(false);
-      // setShowWelcome(false);
-      // setShowAllProducts(false);
-      // setShowRegister(false);
-      showLoginHandler();
+      setShowLogin(true);
+      setShowProduct(false);
+      setShowWelcome(false);
+      setShowAllProducts(false);
+      setShowRegister(false);
+      // showLoginHandler();
     }
   };
 
   const showProductHandler = () => {
+    setShowFirm(false);
     if (showLogout) {
-      setShowProduct(true);
-      setShowFirm(false);
+      if (localStorage.getItem("FirmId")) setShowProduct(true);
+      else {
+        alert(
+          "Please add your restaurant details by using Add Firm tab or from the below form",
+        );
+        setShowFirm(true);
+      }
       setShowRegister(false);
       setShowLogin(false);
       setShowWelcome(false);
       setShowAllProducts(false);
     } else {
       alert("Please Login!");
-      showLoginHandler();
+      // showLoginHandler();
+      setShowLogin(true);
     }
   };
 
@@ -108,7 +115,8 @@ const LandingPage = () => {
       setShowAllProducts(true);
     } else {
       alert("Please Login!");
-      showLoginHandler();
+      // showLoginHandler();
+      setShowLogin(true);
     }
   };
 

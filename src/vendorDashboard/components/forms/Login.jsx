@@ -17,6 +17,7 @@ const Login = ({ showWelcomeHandler }) => {
       });
 
       const data = await response.json();
+      console.log(data);
       const vendorId = data.vendorId;
       //console.log(vendorId);
       if (response.ok) {
@@ -26,15 +27,23 @@ const Login = ({ showWelcomeHandler }) => {
         setEmail("");
         setPassword("");
         showWelcomeHandler();
+      } else if (response.status == 401) {
+        alert(
+          "Invalid username or password\nCheck the details and login again",
+        );
+      } else {
+        console.log("Login Failed");
       }
+
       const vendorResponse = await fetch(
         `${API_URL}/vendor/single-vendor/${vendorId}`,
         {
           method: "GET",
         },
       );
+      console.log(vendorResponse);
       const vendorResponseData = await vendorResponse.json();
-      //console.log(vendorResponseData);
+      console.log(vendorResponseData);
       //console.log(firmId);
 
       if (vendorResponse.ok) {
@@ -45,10 +54,14 @@ const Login = ({ showWelcomeHandler }) => {
         localStorage.setItem("firmName", firmName);
         console.log("firmId saved in the local storage");
         window.location.reload();
+      } else if (vendorResponse.status == 400) {
+        window.location.reload();
+      } else {
+        console.log("No firm Id exists");
       }
     } catch (error) {
-      console.error(error);
-      alert("Login Failed");
+      console.error(error, "problem is here");
+      // alert("Login Failed");
     }
   };
 
